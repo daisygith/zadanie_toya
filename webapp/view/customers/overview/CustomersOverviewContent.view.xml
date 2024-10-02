@@ -1,0 +1,35 @@
+<mvc:View
+		controllerName="sap.ui.demo.nav.controller.customers.overview.CustomersOverviewContent"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Table id="customersTable"
+		   items="{/Customers}"
+		   itemPress=".onItemPressed">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>Customers}" level="H2"/>
+				<ToolbarSpacer />
+				<SearchField id="searchField" search=".onSearchCustomersTable" width="50%"/>
+				<Button icon="sap-icon://sort" press=".onSortButtonPressed"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column id="companyNameCol" demandPopin="true"><Text text="{i18n>formCompanyName}"/></Column>
+			<Column id="addressCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>formAddress}"/></Column>
+			<Column id="cityCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>formCity}"/></Column>
+			<Column id="postalCodeCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>formPostalCode}"/></Column>
+			<Column id="phoneCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>formPhone}"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Active">
+				<cells>
+					<Text text="{CompanyName}"/>
+					<Text text="{Address}"/>
+					<Text text="{City}"/>
+					<Text text="{PostalCode}"/>
+					<Text text="{Phone}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>
